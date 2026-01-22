@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Компания «Карусель» — 10 лет сотрудничества с муниципальными школами и детскими садами Москвы и МО. Образовательные и спортивные направления.">
+    <meta name="keywords" content="Карусель, образование, школы, детские сады, хореография, футбол, математика, подготовка к школе, вокал">
+    <title>Компания «Карусель» — Партнёрство в образовании</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <!-- Mobile logo background -->
+        <div class="hero-mobile-logo" aria-hidden="true"></div>
+        <!-- 3D Carousel (desktop) -->
+        <div class="hero-carousel-3d" id="carousel3d" aria-hidden="true">
+            <div class="carousel-ring" id="carouselRing">
+                <!-- SVG horses and chairs will be injected by JS -->
+            </div>
+        </div>
+        <!-- Overlay gradient -->
+        <div class="hero-overlay"></div>
+        <!-- Content -->
+        <header class="header">
+            <div class="container header-inner">
+                <a href="#hero" class="logo">
+                    <span class="logo-text">Карусель</span>
+                </a>
+                <nav class="nav">
+                    <a href="#about" class="nav-link">О компании</a>
+                    <a href="#achievements" class="nav-link">Достижения</a>
+                    <a href="#trust" class="nav-link">Партнёры</a>
+                    <a href="#directions" class="nav-link">Направления</a>
+                    <a href="#gallery" class="nav-link">Мероприятия</a>
+                    <a href="#video" class="nav-link">Видео</a>
+                    <a href="#contact" class="nav-link">Контакты</a>
+                </nav>
+                <button class="menu-toggle" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+        <div class="hero-content">
+            <div class="container">
+                <p class="hero-label" data-animate>Компания</p>
+                <h1 class="hero-title" data-animate>«Карусель»</h1>
+                <p class="hero-subtitle" data-animate>10 лет сотрудничества с муниципальными школами и детскими садами Москвы и МО</p>
+                <a href="#contact" class="btn btn-primary" data-animate>Стать партнёром</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span class="hero-scroll-line"></span>
+        </div>
+    </section>
+
+    <!-- 1. О компании -->
+    <section class="section section-about" id="about">
+        <div class="container">
+            <h2 class="section-title" data-animate>О компании</h2>
+            <div class="about-content" data-animate>
+                <p class="about-text">Компания «Карусель» более 10 лет успешно работает с муниципальными школами и детскими садами. Мы создаём устойчивые партнёрства и развиваем образовательные и спортивные направления.</p>
+            </div>
+            <div class="video-item video-item-small" data-animate>
+                    <img class="video-poster" src="posters/preview.png" alt="Превью видео">
+                    <video class="promo-video" muted playsinline preload="metadata" poster="fotofest/11.jpg">
+                        <source src="video/about.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-overlay">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="32" fill="rgba(255,255,255,0.9)"/>
+                            <path d="M26 20L44 32L26 44V20Z" fill="#0a0a0a"/>
+                        </svg>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- 2. Наши достижения -->
+    <section class="section section-achievements" id="achievements">
+        <div class="container">
+            <h2 class="section-title" data-animate>Наши достижения</h2>
+            <div class="kpi-grid">
+                <div class="kpi-card" data-animate>
+                    <span class="kpi-value">10+</span>
+                    <span class="kpi-unit">лет на рынке</span>
+                </div>
+                <div class="kpi-card" data-animate>
+                    <span class="kpi-value">1 000+</span>
+                    <span class="kpi-unit">учеников</span>
+                </div>
+                <div class="kpi-card" data-animate>
+                    <span class="kpi-value">40+</span>
+                    <span class="kpi-unit">филиалов</span>
+                </div>
+                <div class="kpi-card" data-animate>
+                    <span class="kpi-value">✓</span>
+                    <span class="kpi-unit">Официальный спонсор арендуемых помещений</span>
+                </div>
+                <div class="kpi-card" data-animate>
+                    <span class="kpi-value">1 800</span>
+                    <span class="kpi-unit">зрителей на мероприятиях и фестивалях</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Нам доверяют -->
+    <section class="section section-trust" id="trust">
+        <div class="container">
+            <h2 class="section-title" data-animate>Нам доверяют</h2>
+            <div class="trust-grid" data-animate>
+                <div class="trust-item">
+                    <span class="trust-icon">Детские сады</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">Школы</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">Родители</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Наши направления -->
+    <section class="section section-directions" id="directions">
+        <div class="container">
+            <h2 class="section-title" data-animate>Наши направления</h2>
+            <div class="directions-grid">
+                <a href="#contact" class="direction-card" data-animate>
+                    <div class="direction-image-wrap">
+                        <img src="fotocard/112.jpeg" alt="Хореография" class="direction-image" loading="lazy">
+                        <div class="direction-overlay"></div>
+                    </div>
+                    <h3 class="direction-title">Хореография</h3>
+                </a>
+                <a href="#contact" class="direction-card" data-animate>
+                    <div class="direction-image-wrap">
+                        <img src="fotocard/113.jpg" alt="Футбол" class="direction-image" loading="lazy">
+                        <div class="direction-overlay"></div>
+                    </div>
+                    <h3 class="direction-title">Футбол</h3>
+                </a>
+                <a href="#contact" class="direction-card" data-animate>
+                    <div class="direction-image-wrap">
+                        <img src="fotocard/114.jpg" alt="Математика" class="direction-image" loading="lazy">
+                        <div class="direction-overlay"></div>
+                    </div>
+                    <h3 class="direction-title">Ментальная математика</h3>
+                </a>
+                <a href="#contact" class="direction-card" data-animate>
+                    <div class="direction-image-wrap">
+                        <img src="fotocard/115.jpg" alt="Подготовка к школе" class="direction-image" loading="lazy">
+                        <div class="direction-overlay"></div>
+                    </div>
+                    <h3 class="direction-title">Подготовка к школе</h3>
+                </a>
+                <a href="#contact" class="direction-card" data-animate>
+                    <div class="direction-image-wrap">
+                        <img src="fotocard/116.jpg" alt="Вокал" class="direction-image" loading="lazy">
+                        <div class="direction-overlay"></div>
+                    </div>
+                    <h3 class="direction-title">Вокал</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Галерея -->
+    <section class="section section-gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title" data-animate>Фото с мероприятий и фестивалей</h2>
+            <div class="gallery-grid">
+                <button type="button" class="gallery-item" data-animate data-src="fotofest/11.jpg" data-alt="Мероприятие">
+                    <img src="fotofest/11.jpg" alt="Мероприятие" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-animate data-src="fotofest/12.jpg" data-alt="Фестиваль">
+                    <img src="fotofest/12.jpg" alt="Фестиваль" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-animate data-src="fotofest/12.jpg" data-alt="Выступление">
+                    <img src="fotofest/13.jpg" alt="Выступление" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-animate data-src="fotofest/12.jpg" data-alt="Дети на сцене">
+                    <img src="fotofest/14.jpg" alt="Дети на сцене" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-animate data-src="fotofest/12.jpg" data-alt="Спортивное мероприятие">
+                    <img src="fotofest/15.jpg" alt="Спортивное мероприятие" loading="lazy">
+                </button>
+                <button type="button" class="gallery-item" data-animate data-src="fotofest/12.jpg" data-alt="Праздник">
+                    <img src="fotofest/16.jpg" alt="Праздник" loading="lazy">
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр изображения">
+        <button type="button" class="lightbox-close" aria-label="Закрыть">&times;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Просмотр видео">
+        <button type="button" class="video-modal-close" aria-label="Закрыть">&times;</button>
+        <div class="video-modal-content">
+            <video class="video-modal-player" controls>
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- 6. Видео-блок -->
+    <section class="section section-video" id="video">
+        <div class="container container-wide">
+            <h2 class="section-title" data-animate>О нас в деталях</h2>
+            <div class="video-grid">
+                <div class="video-item" data-animate>
+                    <img class="video-poster" src="posters/preview.png" alt="Превью видео">
+                    <video class="promo-video" muted playsinline preload="metadata" poster="fotofest/12.jpg">
+                        <source src="video/12.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-overlay">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="32" fill="rgba(255,255,255,0.9)"/>
+                            <path d="M26 20L44 32L26 44V20Z" fill="#0a0a0a"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="video-item" data-animate>
+                    <img class="video-poster" src="posters/preview.png" alt="Превью видео">
+                    <video class="promo-video" muted playsinline preload="metadata" poster="fotofest/13.jpg">
+                        <source src="video/13.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-overlay">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="32" fill="rgba(255,255,255,0.9)"/>
+                            <path d="M26 20L44 32L26 44V20Z" fill="#0a0a0a"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="video-item" data-animate>
+                    <img class="video-poster" src="posters/preview.png" alt="Превью видео">
+                    <video class="promo-video" muted playsinline preload="metadata" poster="fotofest/14.jpg">
+                        <source src="video/14.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-overlay">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="32" fill="rgba(255,255,255,0.9)"/>
+                            <path d="M26 20L44 32L26 44V20Z" fill="#0a0a0a"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="video-item" data-animate>
+                    <img class="video-poster" src="posters/preview.png" alt="Превью видео">
+                    <video class="promo-video" muted playsinline preload="metadata" poster="fotofest/15.jpg">
+                        <source src="video/15.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-overlay">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="32" fill="rgba(255,255,255,0.9)"/>
+                            <path d="M26 20L44 32L26 44V20Z" fill="#0a0a0a"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Директор -->
+    <section class="section section-director" id="director">
+        <div class="container">
+            <div class="director-block" data-animate>
+                <div class="director-image-wrap">
+                    <img src="fotoboss/boss.jpeg" alt="Директор компании Карусель" class="director-image" loading="lazy">
+                </div>
+                <div class="director-content">
+                    <p class="director-name">Александр Гирин</p>
+                    <p class="director-role">Генеральный директор</p>
+                    <blockquote class="director-quote">Мы строим долгосрочные отношения с образовательными учреждениями. Наша цель — не разовые проекты, а устойчивое партнёрство, которое приносит результат детям, родителям и школам. За 10 лет мы выстроили систему, которой доверяют.</blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CTA -->
+    <section class="section section-cta" id="contact">
+        <div class="container">
+            <div class="cta-block" data-animate>
+                <h2 class="cta-title">Мы открыты к долгосрочному партнёрству</h2>
+                <p class="cta-subtitle">Оставьте заявку — мы свяжемся с вами в ближайшее время</p>
+                <form class="cta-form" id="ctaForm">
+                    <div class="cta-form-row">
+                        <div class="form-group">
+                            <input type="text" id="ctaName" name="name" placeholder="Имя" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="ctaPhone" name="phone" placeholder="Телефон" required autocomplete="tel">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="ctaEmail" name="email" placeholder="Email" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="ctaOrg" name="organization" placeholder="Школа или детский сад (необязательно)" autocomplete="organization">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="ctaMessage" name="message" placeholder="Сообщение (необязательно)" rows="3"></textarea>
+                    </div>
+                    <div class="cta-form-msg" id="ctaFormMsg" aria-live="polite"></div>
+                    <button type="submit" class="btn btn-primary btn-large" id="ctaSubmit">Отправить заявку</button>
+                </form>
+                <p class="cta-contacts">Или свяжитесь напрямую: <a href="tel:+79162160032">+7 (916) 216-00-32</a> · <a href="mailto:fondkarusel@mail.ru">fondkarusel@mail.ru</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <span class="footer-logo">Карусель</span>
+                <p class="footer-copy">© 2026 Компания «Карусель». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
