@@ -14,16 +14,25 @@
 <body>
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <!-- Mobile logo background -->
-        <div class="hero-mobile-logo" aria-hidden="true"></div>
-        <!-- 3D Carousel (desktop) -->
-        <div class="hero-carousel-3d" id="carousel3d" aria-hidden="true">
-            <div class="carousel-ring" id="carouselRing">
-                <!-- SVG horses and chairs will be injected by JS -->
-            </div>
-        </div>
+        <div class="hero-logo-bg" aria-hidden="true"></div>
         <!-- Overlay gradient -->
         <div class="hero-overlay"></div>
+        <section class="news-ticker news-ticker--header" aria-label="Новости компании">
+            <div class="news-ticker__track" id="newsTickerHeaderTrack">
+                <span class="news-item">10 лет партнёрства с образовательными учреждениями</span>
+                <span class="news-sep">•</span>
+                <span class="news-item">Новые программы по хореографии и спорту</span>
+                <span class="news-sep">•</span>
+                <span class="news-item">Расширяем сеть партнёров в Москве и МО</span>
+                <span class="news-sep">•</span>
+                <span class="news-item">Ближайшие фестивали и мероприятия — в разделе «Новости компании»</span>
+                <span class="news-sep">•</span>
+                <span class="news-item">Запуск новых секций в школах округа</span>
+                <span class="news-sep">•</span>
+                <span class="news-item">Приём заявок на следующий учебный сезон открыт</span>
+                <span class="news-sep">•</span>
+            </div>
+        </section>
         <!-- Content -->
         <header class="header">
             <div class="container header-inner">
@@ -31,6 +40,7 @@
                     <span class="logo-text">Карусель</span>
                 </a>
                 <nav class="nav">
+                    <a href="#news" class="nav-link">Новости</a>
                     <a href="#about" class="nav-link">О компании</a>
                     <a href="#achievements" class="nav-link">Достижения</a>
                     <a href="#trust" class="nav-link">Партнёры</a>
@@ -59,6 +69,73 @@
         </div>
     </section>
 
+    <!-- Новости компании -->
+    <section class="section section-news" id="news">
+        <div class="container">
+            <h2 class="section-title" data-animate>Новости компании</h2>
+        </div>
+        <div class="news-ticker news-ticker--cards" aria-label="Новости компании">
+            <div class="news-ticker__track" id="newsTickerCardsTrack">
+                <article class="news-card">
+                    <img src="fotofest/11.jpg" alt="Партнёрские программы" class="news-card__image" loading="lazy">
+                    <div class="news-card__content">
+                        <p class="news-card__title">10 лет партнёрства с образовательными учреждениями</p>
+                        <p class="news-card__meta">Москва и МО</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="fotofest/12.jpg" alt="Новые направления" class="news-card__image" loading="lazy">
+                    <div class="news-card__content">
+                        <p class="news-card__title">Новые программы по хореографии и спорту</p>
+                        <p class="news-card__meta">Сезон 2026</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="fotofest/19.jpeg" alt="Сеть партнёров" class="news-card__image" loading="lazy">
+                    <div class="news-card__content">
+                        <p class="news-card__title">Расширяем сеть партнёров в Москве и МО</p>
+                        <p class="news-card__meta">Открываем новые площадки</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="fotofest/14.jpg" alt="Фестивали и мероприятия" class="news-card__image" loading="lazy">
+                    <div class="news-card__content">
+                        <p class="news-card__title">Ближайшие фестивали и мероприятия</p>
+                        <p class="news-card__meta">Смотрите видео-отчёты</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="fotofest/15.jpg" alt="Новые площадки" class="news-card__image" loading="lazy">
+                    <div class="news-card__content">
+                        <p class="news-card__title">Новые площадки для занятий в школах</p>
+                        <p class="news-card__meta">Открытие филиалов</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="fotofest/16.jpg" alt="Праздничные выступления" class="news-card__image" loading="lazy">
+                    <div class="news-card__content">
+                        <p class="news-card__title">Праздничные выступления и отчетные концерты</p>
+                        <p class="news-card__meta">События сезона</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="fotofest/17.jpg" alt="Командные соревнования" class="news-card__image" loading="lazy">
+                    <div class="news-card__content">
+                        <p class="news-card__title">Командные соревнования и спортивные старты</p>
+                        <p class="news-card__meta">Спорт и развитие</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="fotofest/13.jpg" alt="Творческие направления" class="news-card__image" loading="lazy">
+                    <div class="news-card__content">
+                        <p class="news-card__title">Творческие направления для младших групп</p>
+                        <p class="news-card__meta">Хореография и вокал</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- 1. О компании -->
     <section class="section section-about" id="about">
         <div class="container">
@@ -67,7 +144,7 @@
                 <p class="about-text">Компания «Карусель» более 10 лет успешно работает с муниципальными школами и детскими садами. Мы создаём устойчивые партнёрства и развиваем образовательные и спортивные направления.</p>
             </div>
             <div class="video-item video-item-small" data-animate>
-                    <img class="video-poster" src="posters/preview.png" alt="Превью видео">
+                    <img class="video-poster" src="fotofest/18.jpeg" alt="Превью видео">
                     <video class="promo-video" muted playsinline preload="metadata" poster="fotofest/11.jpg">
                         <source src="video/about.mp4" type="video/mp4">
                     </video>
@@ -115,14 +192,35 @@
         <div class="container">
             <h2 class="section-title" data-animate>Нам доверяют</h2>
             <div class="trust-grid" data-animate>
-                <div class="trust-item">
-                    <span class="trust-icon">Детские сады</span>
+                <div class="trust-card">
+                    <div class="trust-item">
+                        <div class="trust-item-bg" style="background-image: url('fotocard/detsad.jpg');"></div>
+                        <div class="trust-item-overlay"></div>
+                        <span class="trust-icon">Детские сады</span>
+                    </div>
+                    <div class="trust-content">
+                        <p class="trust-text">Мы предлагаем комплексное партнёрство по организации кружков и творческих активностей на базе детских садов и школ «под ключ». Полностью берём на себя набор детей в секции, разработку и проведение рекламных кампаний, а также обучение и методическую поддержку вашего персонала. Все занятия ведут исключительно квалифицированные специалисты с профильным образованием и опытом работы с детьми.</p>
+                    </div>
                 </div>
-                <div class="trust-item">
-                    <span class="trust-icon">Школы</span>
+                <div class="trust-card">
+                    <div class="trust-item">
+                        <div class="trust-item-bg" style="background-image: url('fotocard/shkola.jpeg');"></div>
+                        <div class="trust-item-overlay"></div>
+                        <span class="trust-icon">Школы</span>
+                    </div>
+                    <div class="trust-content">
+                        <p class="trust-text">Наша компания выступает надёжным спонсором вашего учреждения, обеспечивая как финансовую поддержку, так и активное участие в жизни площадки. Мы содействуем в организации праздников, фестивалей и тематических мероприятий: предоставляем профессиональных ведущих, костюмы, сценарии и интерактивные форматы, которые повышают вовлечённость детей и родителей.</p>
+                    </div>
                 </div>
-                <div class="trust-item">
-                    <span class="trust-icon">Родители</span>
+                <div class="trust-card">
+                    <div class="trust-item">
+                        <div class="trust-item-bg" style="background-image: url('fotocard/family.jpg');"></div>
+                        <div class="trust-item-overlay"></div>
+                        <span class="trust-icon">Родители</span>
+                    </div>
+                    <div class="trust-content">
+                        <p class="trust-text">Отдельное внимание мы уделяем формированию устойчивой лояльности со стороны родительской аудитории. Благодаря качественным программам, прозрачной коммуникации и ярким событиям, родители воспринимают учреждение как современное, заботящееся о развитии ребёнка пространство. Это способствует росту доверия, повышению привлекательности вашей организации и дополнительному притоку детей без дополнительных затрат с вашей стороны.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -142,7 +240,7 @@
                 </a>
                 <a href="#contact" class="direction-card" data-animate>
                     <div class="direction-image-wrap">
-                        <img src="fotocard/113.jpg" alt="Футбол" class="direction-image" loading="lazy">
+                        <img src="fotocard/117.jpeg" alt="Футбол" class="direction-image" loading="lazy">
                         <div class="direction-overlay"></div>
                     </div>
                     <h3 class="direction-title">Футбол</h3>
@@ -178,22 +276,22 @@
             <h2 class="section-title" data-animate>Фото с мероприятий и фестивалей</h2>
             <div class="gallery-grid">
                 <button type="button" class="gallery-item" data-animate data-src="fotofest/11.jpg" data-alt="Мероприятие">
-                    <img src="fotofest/11.jpg" alt="Мероприятие" loading="lazy">
+                    <img src="fotofest/20.jpeg" alt="Мероприятие" loading="lazy">
                 </button>
                 <button type="button" class="gallery-item" data-animate data-src="fotofest/12.jpg" data-alt="Фестиваль">
-                    <img src="fotofest/12.jpg" alt="Фестиваль" loading="lazy">
+                    <img src="fotofest/21.jpeg" alt="Фестиваль" loading="lazy">
                 </button>
                 <button type="button" class="gallery-item" data-animate data-src="fotofest/12.jpg" data-alt="Выступление">
-                    <img src="fotofest/13.jpg" alt="Выступление" loading="lazy">
+                    <img src="fotofest/22.jpeg" alt="Выступление" loading="lazy">
                 </button>
                 <button type="button" class="gallery-item" data-animate data-src="fotofest/12.jpg" data-alt="Дети на сцене">
-                    <img src="fotofest/14.jpg" alt="Дети на сцене" loading="lazy">
+                    <img src="fotofest/23.jpeg" alt="Дети на сцене" loading="lazy">
                 </button>
                 <button type="button" class="gallery-item" data-animate data-src="fotofest/12.jpg" data-alt="Спортивное мероприятие">
-                    <img src="fotofest/15.jpg" alt="Спортивное мероприятие" loading="lazy">
+                    <img src="fotofest/24.jpeg" alt="Спортивное мероприятие" loading="lazy">
                 </button>
                 <button type="button" class="gallery-item" data-animate data-src="fotofest/12.jpg" data-alt="Праздник">
-                    <img src="fotofest/16.jpg" alt="Праздник" loading="lazy">
+                    <img src="fotofest/25.jpeg" alt="Праздник" loading="lazy">
                 </button>
             </div>
         </div>
@@ -223,7 +321,7 @@
             <h2 class="section-title" data-animate>О нас в деталях</h2>
             <div class="video-grid">
                 <div class="video-item" data-animate>
-                    <img class="video-poster" src="posters/preview.png" alt="Превью видео">
+                    <img class="video-poster" src="fotofest/19.jpeg" alt="Превью видео">
                     <video class="promo-video" muted playsinline preload="metadata" poster="fotofest/12.jpg">
                         <source src="video/12.mp4" type="video/mp4">
                     </video>
@@ -235,7 +333,7 @@
                     </div>
                 </div>
                 <div class="video-item" data-animate>
-                    <img class="video-poster" src="posters/preview.png" alt="Превью видео">
+                    <img class="video-poster" src="fotofest/28.jpeg" alt="Превью видео">
                     <video class="promo-video" muted playsinline preload="metadata" poster="fotofest/13.jpg">
                         <source src="video/13.mp4" type="video/mp4">
                     </video>
@@ -247,7 +345,7 @@
                     </div>
                 </div>
                 <div class="video-item" data-animate>
-                    <img class="video-poster" src="posters/preview.png" alt="Превью видео">
+                    <img class="video-poster" src="fotofest/26.jpeg" alt="Превью видео">
                     <video class="promo-video" muted playsinline preload="metadata" poster="fotofest/14.jpg">
                         <source src="video/14.mp4" type="video/mp4">
                     </video>
@@ -259,7 +357,7 @@
                     </div>
                 </div>
                 <div class="video-item" data-animate>
-                    <img class="video-poster" src="posters/preview.png" alt="Превью видео">
+                    <img class="video-poster" src="fotofest/23.jpeg" alt="Превью видео">
                     <video class="promo-video" muted playsinline preload="metadata" poster="fotofest/15.jpg">
                         <source src="video/15.mp4" type="video/mp4">
                     </video>
@@ -279,7 +377,7 @@
         <div class="container">
             <div class="director-block" data-animate>
                 <div class="director-image-wrap">
-                    <img src="fotoboss/boss.jpeg" alt="Директор компании Карусель" class="director-image" loading="lazy">
+                    <img src="fotoboss/boss3.jpeg" alt="Директор компании Карусель" class="director-image" loading="lazy">
                 </div>
                 <div class="director-content">
                     <p class="director-name">Александр Гирин</p>
@@ -332,5 +430,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="scripts/ticker.js" defer></script>
 </body>
 </html>

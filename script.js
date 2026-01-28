@@ -1,83 +1,14 @@
 /**
  * Компания «Карусель» — премиальный одностраничный сайт
- * 3D карусель, параллакс, лайтбокс, анимации, отправка заявок в Telegram
+ * Лайтбокс, модальные окна, анимации, отправка заявок на email
  */
 
 (function () {
     'use strict';
 
-    // —— Telegram: замените на свои данные (токен от @BotFather, Chat ID от @userinfobot) ——
-    var TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN';
-    var TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID';
-
-    // ========== 3D CAROUSEL (desktop) ==========
-    const carouselRing = document.getElementById('carouselRing');
-    const carousel3d = document.getElementById('carousel3d');
-    const items = [];
-    const radius = 420;
-    const count = 12;
-    // Карусельная лошадь по образцу: прыжок, грива и хвост, шест со сферой на спине
-    const horseSvg = '<img src="logo/blkhor.png" alt="Лошадь">';
-
-    function buildCarousel() {
-        if (!carouselRing || !carousel3d) return;
-        if (window.matchMedia('(max-width: 1023px)').matches) {
-            if (raf) { cancelAnimationFrame(raf); raf = null; }
-            carouselRing.innerHTML = '';
-            items.length = 0;
-            return;
-        }
-        if (raf) cancelAnimationFrame(raf);
-        items.length = 0;
-        carouselRing.innerHTML = '';
-        for (let i = 0; i < count; i++) {
-            const el = document.createElement('div');
-            el.className = 'carousel-item';
-            el.innerHTML = horseSvg;
-            el.style.color = '';
-            carouselRing.appendChild(el);
-            items.push({ el, angle: (i / count) * 360 });
-        }
-        runCarousel();
-    }
-
-    let carouselAngle = 0;
-    let parallaxX = 0, parallaxY = 0;
-    let raf = null;
-
-    function runCarousel() {
-        const update = () => {
-            carouselAngle += 360 / (45 * 60);
-            if (carouselAngle >= 360) carouselAngle -= 360;
-            items.forEach(function (it) {
-                var rad = (it.angle * Math.PI) / 180;
-                var x = Math.sin(rad) * radius;
-                var z = Math.cos(rad) * radius;
-                it.el.style.transform = 'translate(-50%,-50%) translate3d(' + x + 'px, 0, ' + z + 'px) rotateY(' + (-it.angle) + 'deg)';
-                var viewAngle = (it.angle - carouselAngle + 360) % 360;
-                it.el.classList.toggle('back', viewAngle > 90 && viewAngle < 270);
-            });
-            carouselRing.style.transform = 'rotateY(' + carouselAngle + 'deg) rotateX(' + (parallaxY * 6) + 'deg) rotateY(' + (parallaxX * 6) + 'deg)';
-            raf = requestAnimationFrame(update);
-        };
-        raf = requestAnimationFrame(update);
-    }
-
-    function onMouseMove(e) {
-        if (!carousel3d || !carousel3d.offsetParent) return;
-        const w = window.innerWidth, h = window.innerHeight;
-        parallaxX = (e.clientX / w - 0.5) * 2;
-        parallaxY = (e.clientY / h - 0.5) * 2;
-    }
-
-    if (carousel3d) {
-        buildCarousel();
-        window.addEventListener('mousemove', onMouseMove, { passive: true });
-        window.addEventListener('resize', () => {
-            if (raf) cancelAnimationFrame(raf);
-            buildCarousel();
-        });
-    }
+    // ========== EMAIL CONFIGURATION ==========
+    // Укажите URL вашего сервера (например: 'https://yourdomain.com/api/send-email')
+    const EMAIL_SERVER_URL = 'http://localhost:3000/api/send-email';
 
     // ========== LIGHTBOX ==========
     const lightbox = document.getElementById('lightbox');
@@ -199,7 +130,7 @@
         }
     });
 
-    // ========== CTA FORM → TELEGRAM ==========
+    // ========== CTA FORM → EMAIL ==========
     var ctaForm = document.getElementById('ctaForm');
     var ctaFormMsg = document.getElementById('ctaFormMsg');
     var ctaSubmit = document.getElementById('ctaSubmit');
@@ -238,34 +169,47 @@
             var org = (document.getElementById('ctaOrg') && document.getElementById('ctaOrg').value) || '—';
             var msg = (document.getElementById('ctaMessage') && document.getElementById('ctaMessage').value) || '—';
 
-            var text = '🔄 <b>Заявка с сайта «Карусель»</b>\n\n';
-            text += '👤 <b>Имя:</b> ' + (name || '—') + '\n';
-            text += '📞 <b>Телефон:</b> ' + (phone || '—') + '\n';
-            text += '📧 <b>Email:</b> ' + (email || '—') + '\n';
-            text += '🏫 <b>Организация:</b> ' + org + '\n';
-            text += '💬 <b>Сообщение:</b> ' + msg + '\n\n';
-            text += '🕐 ' + new Date().toLocaleString('ru-RU');
-
             try {
-                if (!TELEGRAM_BOT_TOKEN || TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN' || !TELEGRAM_CHAT_ID || TELEGRAM_CHAT_ID === 'YOUR_CHAT_ID') {
-                    throw new Error('Укажите TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID в script.js');
-                }
-                var url = 'https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/sendMessage';
-                var res = await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text, parse_mode: 'HTML' })
+                var success = await sendEmailViaServer({
+                    name: name || '—',
+                    phone: phone || '—',
+                    email: email || '—',
+                    organization: org,
+                    message: msg,
+                    submittedAt: new Date().toISOString()
                 });
-                var data = await res.json();
-                if (!res.ok) throw new Error(data.description || 'Ошибка отправки');
-                showCtaMsg('Заявка отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
-                ctaForm.reset();
+
+                if (success) {
+                    showCtaMsg('Заявка отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
+                    ctaForm.reset();
+                }
             } catch (err) {
                 showCtaMsg(err.message || 'Ошибка при отправке. Позвоните нам: +7 (916) 216-00-32', 'error');
             } finally {
                 if (ctaSubmit) { ctaSubmit.disabled = false; ctaSubmit.textContent = origText; }
             }
         });
+    }
+
+    // Отправка через промежуточный сервер (email)
+    async function sendEmailViaServer(payload) {
+        if (!EMAIL_SERVER_URL) {
+            throw new Error('Укажите EMAIL_SERVER_URL в script.js');
+        }
+
+        var res = await fetch(EMAIL_SERVER_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        var data = await res.json();
+
+        if (!res.ok || !data.success) {
+            throw new Error(data.error || 'Ошибка отправки через сервер');
+        }
+
+        return true;
     }
 
 })();
